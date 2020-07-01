@@ -30,19 +30,19 @@ for row in content:
         try:
             processed_data.append(proc(data))
         except  ValueError:
-            continue
-    
-    # meteor = {column_names[i]: row[i] for i in range(len(column_names))}
-    meteor = {name: data for name, data in zip(column_names, processed_data)}  # Pythonic
-
-    '''
-    if meteor["mass (g)"]:
-        meteor["mass (g)"] = float(meteor["mass (g)"])
+            break
     else:
-        continue
-    '''
-    meteorites.append(meteor)
-    
+        # meteor = {column_names[i]: row[i] for i in range(len(column_names))}
+        meteor = {name: data for name, data in zip(column_names, processed_data)}  # Pythonic
+
+        meteorites.append(meteor)
+        
+        '''
+        if meteor["mass (g)"]:
+            meteor["mass (g)"] = float(meteor["mass (g)"])
+        else:
+            continue
+        '''
 '''
 # (one way not dynamic)
 next(content)
@@ -66,15 +66,15 @@ for row in content:
     meteorites.append(meteor)
 '''
 
-'''
+#'''
 # (largest mass)
 largest = max(meteorites, key=get_mass)
-'''
+#'''
 '''
 # (largest name lenght)
 largest = max(meteorites, key=get_name)
 '''
-# print(largest)
+print(largest)
 
 # a = print
 # a("hello")
