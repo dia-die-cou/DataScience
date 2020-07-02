@@ -21,27 +21,31 @@ Car.drive()
 Car.print_info()
 '''
 
+import time
 
 class Car:
     # north = 1
     # east = 2
     # south = 3
     # west = 4
-    def __init__(self):
+    def __init__(self, custom_speed, name):
         self.position = 0
         self.speed = 10
+        self.name = name
 
     def drive(self):
         self.position += self.speed
     
     def print_info(self):
-        print("Car is current at", self.position)
+        print(self.name, "is current at", self.position, "at a speed of", self.speed)
 
+time1 = time.time()
+BMW = Car(0, "BMW")
 
-BMW = Car()
+for i in range(1, 10):
+    BMW.speed = i
+    BMW.drive()
+    BMW.print_info()
 
-BMW.print_info()
-BMW.drive()
-BMW.drive()
-BMW.drive()
-BMW.print_info()
+result = time.time() - time1
+print(result)
