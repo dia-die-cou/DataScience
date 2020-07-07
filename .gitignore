@@ -1,2 +1,7 @@
-**/vscode/
-.Pipfile
+**/__cache__/
+Pipfile.lock
+**/*.dat
+**/*.png
+**/*.jpg
+**/.vscode/
+Pipfile
