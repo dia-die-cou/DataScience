@@ -1,3 +1,4 @@
+
 # region
 import sys
 sys.path.append(sys.path.pop(0))
@@ -5,7 +6,7 @@ sys.path.append(sys.path.pop(0))
 import math
 import numpy as np
 from matplotlib import pyplot
-
+'''
 # x_coords = [0,1,2,3,4,5]
 # y_coords = [0,5,0,5,0,5]
 
@@ -13,7 +14,6 @@ from matplotlib import pyplot
 # # pyplot.show()
 # pyplot.savefig("myplotlib.png")
 # endregion
-for  
 x_coords = np.arange(1, 11, 0.1)
 # x_coords = range(1, 10, 0.1) # It doesn't work
 y_coords = np.sin(x_coords)
@@ -42,3 +42,35 @@ pyplot.ylabel("y axis") # Names the side of the y axis
 
 pyplot.show() # Shows the graph
 # pyplot.savefig("myplotlib.png") # Save it to a file.png called myplotlib.png
+'''
+
+# region 
+'''
+colours = "ryb"
+x_coords = np.arange(0, 20, 0.1)
+
+for i in range(1, 5):
+    y_coords = np.sin(x_coords + i) * i
+    pyplot.plot(x_coords, y_coords, colours[(i - 1) % 3] + "x")
+
+
+pyplot.plot(x_coords, y_coords)
+pyplot.show()
+'''
+# endregion
+
+
+colours = "ryb"
+x_coords = np.arange(0, 20, 0.1)
+
+# Extract the figure and the axes objects from pyplot
+figure, axes = pyplot.subplots()
+
+for i in range(1, 4):
+    y_coords = np.sin(x_coords + i) * i
+    axes.plot(x_coords, y_coords, colours[i - 1] + "x")
+
+axes.set_title("Graph 1")
+
+pyplot.plot(x_coords, y_coords)
+pyplot.show()

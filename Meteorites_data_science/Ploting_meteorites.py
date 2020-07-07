@@ -1,6 +1,6 @@
 # import matplotlib.pyplot as plt
 from  matplotlib import pyplot
-from day_1  import meteorites
+from Meteorites  import meteorites
 from collections import defaultdict
 
 counts = defaultdict(int)
