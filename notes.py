@@ -134,3 +134,5 @@ def multiple_of(n, base):
 for n in range(1, 101):
     multiple_of(n,)
 '''
+
+# python minimizer
