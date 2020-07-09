@@ -19,6 +19,9 @@ converters = {
 }
 
 meteorites = pd.read_csv("../Meteorites_data_science/NASA.csv", converters=converters)
+
+meteorites = meteorites[meteorites.year != 0]
+
 print(meteorites.head(10)) # Takes first 10
 # print(meteorites.tail(10)) # Takes the last 10
 # print(meteorites.dtypes) # See how pandas interpreted meteorites
@@ -34,5 +37,6 @@ for mass in meteorites["mass (g)"]:
 	size = map_value(mass, 0, 6000000, 1, 200)
 	sizes.append(size)
 
-axes.scatter(meteorites.year, meteorites.reclat)
+# print(sizes)
+axes.scatter(meteorites.year, meteorites.reclat, s=sizes, alpha=0.5)
 pyplot.show()
