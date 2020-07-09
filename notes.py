@@ -136,3 +136,9 @@ for n in range(1, 101):
 '''
 
 # python minimizer
+
+# https://www.w3schools.com/python/python_datetime.asp    
+
+# eventsistem
+
+# dependency injection
